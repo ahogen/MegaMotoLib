@@ -1,6 +1,8 @@
 # MegaMoto Arduino Library
 An Arduino library for interfacing with the MegaMoto and MegaMoto Plus by [Robot Power](http://www.robotpower.com/)
 
+![MegaMoto Plus by Robot Power](http://www.robotpower.com/images/MM-Plus-top-sm.jpg)
+
 [TOC]
 
 ## What is this?
