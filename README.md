@@ -22,14 +22,21 @@ This is a library to (hopefully) simplify the interface with Robot Power's "Mega
 ## Status
 
 [X] = **Working feature.** I've tested it with my hardware setup and it seems to work great.
+
 [ ] = **Planned feature.** I might have a few lines in the code relating to this concept, but it's either not working yet or I don't have a way of testing it.
 
 
+
 [X] Configurable PWMA / PWMB pin assignments
+
 [X] Configurable Enable pin assignment (If no Enable pin is provided, it won't attempt to use Enable at all!)
+
 [X] Handles the H-bridge hardware configuration
+
 [ ] Handles the half-bridge hardware configuration
+
 [X] Ramps motor up/down from current speed to the new speed
+
 [X] Immediate stop/off. If there is some safety-crtical setting, you can shut down your device immediatly without ramping down first.
 
 ## Getting Started
