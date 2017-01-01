@@ -1,6 +1,7 @@
 /********************************************//**
  * \file     Basic.pde
  * \author   Alexander Hogen
+ *           https://github.com/ahogen/MegaMoto
  * \date     12/31/2016
  * \version  0.1
  * \brief    A basic example showing how to get
