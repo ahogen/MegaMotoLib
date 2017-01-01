@@ -39,6 +39,8 @@ This is a library to (hopefully) simplify the interface with Robot Power's "Mega
 
 [X] Immediate stop/off. If there is some safety-crtical setting, you can shut down your device immediatly without ramping down first.
 
+[ ] Current sense reporting. Reads the voltage from the current sense output on the MegaMoto and converts it to milliamps (mA) and returns the milliamp value as an integer.
+
 ## Getting Started
 
 1. Download this library and unzip in your Arduino/libraries folder. 
