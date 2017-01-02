@@ -7,6 +7,16 @@
  *           to control the MegaMoto Plus by Robot
  *           Power
  *
+ * NOTE: References to MegaMoto, MegaMoto Plus,
+ *       and Robot Power are either reserved or
+ *       trademarked by Robot Power:
+ *
+ *       2745 Martin Way E, Suite D
+ *       Olympia, WA 98506
+ *       http://www.robotpower.com/
+ *
+ * I do not own or claim ownership to these names.
+ *
  * [1] "MegaMoto & MegaMoto Plus User Manual," Robot Power,
  *     Version 1.6, May 28, 2016.
  *     Avaliable: http://www.robotpower.com/downloads/MegaMoto-user-manual.pdf
@@ -17,69 +27,69 @@
 
 #include <Arduino.h>
 
-#define MEGA_MOTO_FEATHER_STEP 3
-
-/********************************************//**
- * \enum TMegaMotoWiring
- * \brief Two possible wiring configurations for
- *        the MegaMoto controller
- *
- * 
- ***********************************************/
-enum TMegaMotoWiring {
-    H_bridge,
-    half_bridge
-};
-
-enum TMegaMotoDir {
-    FWD,
-    REV,
-    STOP
-};
-
 /********************************************//**
  * \class MegaMoto
- * \brief 
+ * \brief Provides an easy way to interface with
+ *        the MegaMoto controller by Robot Power
  * 
+ * This is a parent class. You should not be
+ * directly using this class in your code.
+ * Instead, use MegaMotoHB or MegaMotoHalfB in
+ * your code, depending on your device hookup
+ * configuration.
+ *
+ * Please see the example file(s) for, well...
+ * examples! ;-)
  ***********************************************/
 class MegaMoto {
 
 public:
   
-  MegaMoto(byte pin_pwm_a, 
-           byte pin_pwm_b, 
-           TMegaMotoWiring wire_config);
-  
-  MegaMoto(byte pin_pwm_a, 
-           byte pin_pwm_b,
-           byte pin_enable,
-           TMegaMotoWiring wire_config);
 
-  //void SetSpeed( const byte pwm_duty_in ){ pwm_duty = pwm_duty_in;};
+	MegaMoto(
+		unsigned char pin_pwm_a, 
+		unsigned char pin_pwm_b);
 
-  void Move(const TMegaMotoDir dir, const byte pwm_duty);
-  
-  void FeatherSpeed( const byte pwm_duty_in );
-  
-  void Forward();
-  void Forward( const byte pwm_duty );
-  
-  void Reverse();
-  void Reverse( const byte pwm_duty );
+	MegaMoto(
+		unsigned char pin_pwm_a, 
+		unsigned char pin_pwm_b,
+		unsigned char pin_enable);
 
-  void StopBrake();
+	void SetStepDelay(int new_ms_delay);
+	int  GetStepDelay() const;
+		
+	void Kill();
+
+	void Enable();
+	virtual void Disable() = 0;
 
 protected:
 
+	const bool use_enable_pin;  //!< TRUE if Enable pin will be controlled by this object
+	const unsigned char pin_en; //!< Arduino pin number of the Enable line
+	const unsigned char pin_a;  //!< Arduino pin number of MegaMoto PWM A
+	const unsigned char pin_b;  //!< Arduino pin number of MegaMoto PWM B
+
+	/********************************************//**
+	* \var pwm_step_delay_ms
+	* \brief Defines the delay in milliseconds
+	*        used when "fading" the PWM duty cycle
+	*        up or down.
+	*
+	* This defines the value used in a delay() call
+	* in the StepPwmDuty() method. Therefore, this
+	* value is in milliseconds (ms). To slow the
+	* changes in speed (make the change longer),
+	* increase this value.
+	*
+	***********************************************/
+	unsigned char pwm_step_delay_ms;
+  
 private:
 
-  const bool use_enable_pin;
-  const byte pin_enable;
-  const byte pin_a;
-  const byte pin_b;
-  byte pwm_duty;
-  TMegaMotoWiring wire_config;
-  TMegaMotoDir current_dir;
+  // Nothing here, since the children classes are intended to inheirit
+  // everything currently in this parent class
+
 };
 
 #endif // MegaMoto_h
