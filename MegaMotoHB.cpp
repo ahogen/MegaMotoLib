@@ -231,6 +231,6 @@ void MegaMotoHB::Disable()
   // Disable the MegaMoto
   if (use_enable_pin)
   {
-    digitalWrite(pin_enable, LOW);
+    digitalWrite(pin_en, LOW);
   }
 }

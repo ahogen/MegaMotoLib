@@ -32,7 +32,7 @@ MegaMoto::MegaMoto(
 	unsigned char pin_pwm_a, 
 	unsigned char pin_pwm_b)
 	: use_enable_pin( false ), 
-	pin_enable( 255 ),
+	pin_en( 255 ),
 	pin_a ( pin_pwm_a ),
 	pin_b ( pin_pwm_b ),
 	pwm_step_delay_ms (3)
