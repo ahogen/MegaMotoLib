@@ -1,9 +1,10 @@
 # MegaMoto Arduino Library
-An Arduino library for interfacing with the MegaMoto and MegaMoto Plus by [Robot Power](http://www.robotpower.com/)
+[![Build Status](https://travis-ci.org/ahogen/MegaMoto.svg?branch=dev-alex)](https://travis-ci.org/ahogen/MegaMoto)
+
+An Arduino library for interfacing with the MegaMoto family of motor controllers by [Robot Power](http://www.robotpower.com/). The "MegaMogo" name is trademark of Robot Power. You can find and purchase their hardware by visiting their website: [www.robotpower.com](http://www.robotpower.com/). I have been granted written permission by Robot Power to use the "MegaMoto" name in the library and associated code as long as I point people to their company name and website. *I encourage you to go check out their stuff!*
 
 ![MegaMoto Plus by Robot Power](http://www.robotpower.com/images/MM-Plus-top-sm.jpg)
 
-[TOC]
 
 ## What is this?
 
@@ -43,14 +44,18 @@ This is a library to (hopefully) simplify the interface with Robot Power's "Mega
 
 ## Getting Started
 
-1. Download this library and unzip in your Arduino/libraries folder. 
-   * Click "Clone or download" here in GitHub. 
-   * Click "Download as .ZIP" 
-   * See [these instructions](https://www.arduino.cc/en/Guide/Libraries) to add the library to your Arduino IDE installation
+It is assumed that you have already read or understand the options provided by the MegaMoto hardware. You should know how you want to physically configure the controller and wire up your device. I don't want to repeat any of their documentation. It was very well written. So, **if you have not yet read the MegaMoto User Guide, please do so.** Links are provided in the "Useful Links" section at the bottom of this page.
 
-2. Include the MegaMoto header file in your project .ino file by writing `#include <MegaMoto.h>` at the top of your program.
-3. Instantiate a new MegaMoto object and provide the correct pin assignments and hardware configuration you used.
-4. Use the `MegaMoto::Move()` function to start your motor moving!
+1. Download this library and unzip in your Arduino/libraries folder. 
+   * [Download the latest .ZIP file](https://github.com/ahogen/MegaMoto/raw/master/release/MegaMoto.zip)
+   * See [these instructions](https://www.arduino.cc/en/Guide/Libraries) to add the library to your Arduino IDE installation
+2. Choose the appropariate class to use
+   * H-bridge wiring on MegaMoto output = `#include <MegaMotoHB.h>`
+   * Half-bridge wiring on output = `#include <MegaMotoHalfB.h>`
+3. Delcare a motor object and specify the PWM A and PWM B pins you chose to use.
+4. Call one of the motion functions, like `::Fwd()`, `::Rev()` to start up your device
+
+**ATTN:** The `/examples` folder has been created for a reason! It might be a lot easier to see how to get started by checking out the example projects.
 
 For more information about how to use this library, plese visit the `/doc` folder of this repository (or your downloaded .ZIP file.
 
