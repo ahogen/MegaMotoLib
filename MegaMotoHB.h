@@ -1,14 +1,26 @@
 /********************************************//**
  * \file     MegaMotoHB.h
  * \author   Alexander Hogen
- * \date     1/1/2011
+ * \date     1/3/2017
  * \version  0.1
  * \brief    H-Bridge configuration -- An Arduino
- *           library to control the MegaMoto Plus
- *           by Robot Power
+ *           library to control the MegaMoto motor
+ *           controller family by Robot Power
+ *
+ * The MegaMotoHB class is a derived class from
+ * the MegaMotoBase base class. You should use the
+ * MegaMotoHB class if your device you are controlling
+ * is wired in an H-bridge configuration (hence 
+ * the "HB" at the end of the class name). If
+ * You do not know what this means, then you
+ * probably haven't checked out the MegaMoto
+ * User Guide written by the people who made
+ * it, Robot Power! Go have a look first. Things
+ * over here might make more sense afterwards.
+ * Trust me.
  *
  * NOTE: References to MegaMoto, MegaMoto Plus,
- *       and Robot Power are either reserved or
+ *       or Robot Power are either reserved or
  *       trademarked by Robot Power:
  *
  *       2745 Martin Way E, Suite D
@@ -16,6 +28,8 @@
  *       http://www.robotpower.com/
  *
  * I do not own or claim ownership to these names.
+ *
+ * Released into the public domain.
  *
  * [1] "MegaMoto & MegaMoto Plus User Manual," Robot Power,
  *     Version 1.6, May 28, 2016.
@@ -25,7 +39,7 @@
 #ifndef MEGAMOTOHB_H
 #define MEGAMOTOHB_H
 
-#include "MegaMoto.h"
+#include "MegaMotoBase.h"
 
 /********************************************//**
  * \class MegaMotoHB
@@ -44,7 +58,7 @@
  * Please see the example file(s) for, well...
  * examples! ;-)
  ***********************************************/
-class MegaMotoHB : public MegaMoto {
+class MegaMotoHB : public MegaMotoBase {
 
 public:
 

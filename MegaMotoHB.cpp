@@ -1,10 +1,13 @@
 /********************************************//**
- * \file     MegaMoto.cpp
+ * \file     MegaMotoHB.cpp
  * \author   Alexander Hogen
- * \date     1/1/2017
+ * \date     1/3/2017
  * \version  0.1
  * \brief    Contains the definitions for all the
- *           member methods of the MegaMoto class.
+ *           member methods of the MegaMotoHB class.
+ *
+ *
+ * Released into the public domain.
  *
  ***********************************************/
 
@@ -29,7 +32,7 @@
 MegaMotoHB::MegaMotoHB(
 	unsigned char pin_pwm_a,
 	unsigned char pin_pwm_b):
-	MegaMoto(pin_pwm_a, pin_pwm_b),
+	MegaMotoBase(pin_pwm_a, pin_pwm_b),
 	pwm_duty(0),
 	current_dir(TMegaMotoHBDir::STOP)
 {}
@@ -56,7 +59,7 @@ MegaMotoHB::MegaMotoHB(
 	char pin_pwm_a,
 	char pin_pwm_b,
 	char pin_enable):
-	MegaMoto(pin_pwm_a, pin_pwm_b, pin_enable),
+	MegaMotoBase(pin_pwm_a, pin_pwm_b, pin_enable),
 	pwm_duty(0),
 	current_dir(TMegaMotoHBDir::STOP)
 {}

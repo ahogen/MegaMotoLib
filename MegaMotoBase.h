@@ -1,11 +1,17 @@
 /********************************************//**
- * \file     MegaMoto.h
+ * \file     MegaMotoBase.h
  * \author   Alexander Hogen
- * \date     12/30/2016
+ * \date     1/3/2017
  * \version  0.1
  * \brief    An object oriented Arduino library
  *           to control the MegaMoto Plus by Robot
  *           Power
+ *
+ * This is a base class for the MegaMoto library.
+ * You should not be including this header in
+ * your code. Instead, go look at the MegaMotoHB
+ * or MegaMotoHalfB classes. You should use one
+ * of those in your project. 
  *
  * NOTE: References to MegaMoto, MegaMoto Plus,
  *       and Robot Power are either reserved or
@@ -17,18 +23,20 @@
  *
  * I do not own or claim ownership to these names.
  *
+ * Released into the public domain.
+ *
  * [1] "MegaMoto & MegaMoto Plus User Manual," Robot Power,
  *     Version 1.6, May 28, 2016.
  *     Avaliable: http://www.robotpower.com/downloads/MegaMoto-user-manual.pdf
  ***********************************************/
 
-#ifndef MEGAMOTO_H
-#define MEGAMOTO_H
+#ifndef MEGAMOTOBASE_H
+#define MEGAMOTOBASE_H
 
 #include <Arduino.h>
 
 /********************************************//**
- * \class MegaMoto
+ * \class MegaMotoBase
  * \brief Provides an easy way to interface with
  *        the MegaMoto controller by Robot Power
  * 
@@ -41,16 +49,16 @@
  * Please see the example file(s) for, well...
  * examples! ;-)
  ***********************************************/
-class MegaMoto {
+class MegaMotoBase {
 
 public:
   
 
-	MegaMoto(
+	MegaMotoBase(
 		unsigned char pin_pwm_a, 
 		unsigned char pin_pwm_b);
 
-	MegaMoto(
+	MegaMotoBase(
 		unsigned char pin_pwm_a, 
 		unsigned char pin_pwm_b,
 		unsigned char pin_enable);
@@ -92,4 +100,4 @@ private:
 
 };
 
-#endif // MegaMoto_h
+#endif // MegaMotoBase_h

@@ -1,14 +1,16 @@
 /********************************************//**
- * \file     MegaMoto.cpp
+ * \file     MegaMotoBase.cpp
  * \author   Alexander Hogen
- * \date     1/1/2017
+ * \date     1/3/2017
  * \version  0.1
  * \brief    Contains the definitions for all the
- *           member methods of the MegaMoto class.
+ *           member methods of the MegaMotoBase class.
+ *
+ * Released into the public domain.
  *
  ***********************************************/
 
-#include "MegaMoto.h"
+#include "MegaMotoBase.h"
 
 /********************************************//**
  * \brief Constructor to initialize with pin
@@ -28,7 +30,7 @@
  *        used for MegaMoto PWM B here.
  *
  ***********************************************/
-MegaMoto::MegaMoto( 
+MegaMotoBase::MegaMotoBase( 
 	unsigned char pin_pwm_a, 
 	unsigned char pin_pwm_b)
 	: use_enable_pin( false ), 
@@ -67,7 +69,7 @@ MegaMoto::MegaMoto(
  *        used for the MegaMoto Enable pin here.
  *
  ***********************************************/
-MegaMoto::MegaMoto( 
+MegaMotoBase::MegaMotoBase( 
 	unsigned char pin_pwm_a, 
 	unsigned char pin_pwm_b,
 	unsigned char pin_enable )
@@ -102,7 +104,7 @@ MegaMoto::MegaMoto(
  *
  * \param new_ms_delay is an int 
  ***********************************************/
-void MegaMoto::SetStepDelay( int new_ms_delay )
+void MegaMotoBase::SetStepDelay( int new_ms_delay )
 {
 	pwm_step_delay_ms = new_ms_delay;
 }
@@ -118,7 +120,7 @@ void MegaMoto::SetStepDelay( int new_ms_delay )
  * \return integer value of pwm_step_delay_ms
  *
  ***********************************************/
-int MegaMoto::GetStepDelay() const
+int MegaMotoBase::GetStepDelay() const
 {
 	return( pwm_step_delay_ms );
 }
@@ -132,7 +134,7 @@ int MegaMoto::GetStepDelay() const
  * this function again.
  *
  ***********************************************/
-void MegaMoto::Enable()
+void MegaMotoBase::Enable()
 {
 	if(use_enable_pin)
 	{
@@ -148,7 +150,7 @@ void MegaMoto::Enable()
  * before turning it off is a *bad* idea.
  *
  ***********************************************/
-void MegaMoto::Kill()
+void MegaMotoBase::Kill()
 {
 	// Turn on the MegaMoto if it was off previously
 	if (use_enable_pin)
