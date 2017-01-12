@@ -45,13 +45,13 @@
 // Sensor --> (none. remove jumper)
 
 // Format is:  <yourObjectName>( <pin_for_pwm_a>, <pin_for_pwm_b> );
-MegaMotoHB myMotor(11, 3);
+MegaMotoHB motor(11, 3);
 
 // If you *do* want to use the Enable line, instantiate your motor
 // object like this...
 // Format is:  <yourObjectName>( <pin_for_pwm_a>, <pin_for_pwm_b>, <pin_for_enable> );
 
-//MegaMotoHB myMotor(11, 3, 12);
+//MegaMotoHB motor(11, 3, 12);
 
 void setup() 
 {
@@ -65,7 +65,8 @@ void setup()
 	// control the Enable pin. If you didn't use the Enable pin,
 	// this function won't do anything. It's just wasting your
 	// CPU time, so comment it out! ;-)
-//	myMotor.Enable();
+//	motor.Enable();
+
 }
 
 
@@ -74,19 +75,19 @@ void loop()
     // put your main code here, to run repeatedly:
 
     // Move forward at full speed
-    myMotor.Fwd(255);
+    motor.Fwd(255);
 
     // Wait for 1 second
     delay(1000);
 
     // Move backward at half speed
-    myMotor.Rev(128);
+    motor.Rev(128);
 
     // Wait for 1 second
     delay(1000);
 
     // Stop the device (with 'ramping')
-    myMotor.Stop();
+    motor.Stop();
 
     // Wait for 1 second
     delay(1000);

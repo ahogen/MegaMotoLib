@@ -21,7 +21,7 @@ install:
   
 script:
   - arduino --verify --board ${BOARD} $PWD/examples/H-Bridge/H-Bridge.pde
-#  - arduino --verify --board ${BOARD} $PWD/examples/LedDebug/LedDebug.ino
+  - arduino --verify --board ${BOARD} $PWD/tests/h-bridge-all/h-bridge-all.ino
 #  - arduino --verify --board ${BOARD} $PWD/examples/SerialDebug/SerialDebug.ino
   
 notifications:

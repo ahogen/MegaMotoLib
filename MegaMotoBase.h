@@ -1,7 +1,7 @@
 /********************************************//**
  * \file     MegaMotoBase.h
  * \author   Alexander Hogen
- * \date     1/3/2017
+ * \date     1/11/2017
  * \version  0.1
  * \brief    An object oriented Arduino library
  *           to control the MegaMoto Plus by Robot
@@ -65,11 +65,10 @@ public:
 
 	void SetStepDelay(int new_ms_delay);
 	int  GetStepDelay() const;
-		
-	void Kill();
 
 	void Enable();
 	virtual void Disable() = 0;
+    virtual void Kill() = 0;
 
 protected:
 

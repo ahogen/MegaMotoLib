@@ -1,7 +1,7 @@
 /********************************************//**
  * \file     MegaMotoBase.cpp
  * \author   Alexander Hogen
- * \date     1/3/2017
+ * \date     1/11/2017
  * \version  0.1
  * \brief    Contains the definitions for all the
  *           member methods of the MegaMotoBase class.
@@ -140,32 +140,4 @@ void MegaMotoBase::Enable()
 	{
 		digitalWrite(pin_en, HIGH);
 	}
-}
-
-/********************************************//**
- * \brief Immediatly turn off the output
- *
- * Might be good to use for some safety-critical
- * situation where slowing down the motor/device
- * before turning it off is a *bad* idea.
- *
- ***********************************************/
-void MegaMotoBase::Kill()
-{
-	// Turn on the MegaMoto if it was off previously
-	if (use_enable_pin)
-	{
-		digitalWrite(pin_en, HIGH);
-	}
-
-	// Turn off both PWM outputs
-	analogWrite(pin_a, 0);
-	analogWrite(pin_b, 0);
-	
-	// Don't disable the MegaMoto. Holding the output
-	// might allow some motors with internal brakes
-	// to keep their brakes on. This is very useful
-	// in a situation where we needed to kill the
-	// motor very quickly. Disableing the MegaMoto
-	// and letting the motor "free-run" could be bad!
 }
