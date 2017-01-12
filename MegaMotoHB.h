@@ -1,7 +1,7 @@
 /********************************************//**
  * \file     MegaMotoHB.h
  * \author   Alexander Hogen
- * \date     1/3/2017
+ * \date     1/11/2017
  * \version  0.1
  * \brief    H-Bridge configuration -- An Arduino
  *           library to control the MegaMoto motor
@@ -117,6 +117,7 @@ public:
   
 	void StepPwmDuty( unsigned char pwm_duty_in );
 
+    void Kill();
 	void Disable();
 
 protected:
