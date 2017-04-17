@@ -42,6 +42,10 @@ This is a library to (hopefully) simplify the interface with Robot Power's "Mega
 
 [ ] Current sense reporting. Reads the voltage from the current sense output on the MegaMoto and converts it to milliamps (mA) and returns the milliamp value as an integer.
 
+[ ] Synchronous current sensor measurement for RMS and peak current readings
+
+[ ] Current limiting via PWM compression
+
 ## Getting Started
 
 It is assumed that you have already read or understand the options provided by the MegaMoto hardware. You should know how you want to physically configure the controller and wire up your device. I don't want to repeat any of their documentation. It was very well written. So, **if you have not yet read the MegaMoto User Guide, please do so.** Links are provided in the "Useful Links" section at the bottom of this page.
