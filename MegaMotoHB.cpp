@@ -78,13 +78,13 @@ MegaMotoHB::MegaMotoHB(
  *
  * Calls StepPwmDuty() to gradually adjust the
  * old PWM duty cycle to the new PWM duty cycle
- * (i.e. If going from TMegaMotoDir::FWD to 
- * TMegaMotoDir::REV, this method will slow down
+ * (i.e. If going from TMegaMotoHBDir::FWD to 
+ * TMegaMotoHBDir::REV, this method will slow down
  * in the FWD direction, and then speed up in the
  * REV direction.)
  *
  * \param dir is the new motor direction, defined
- *        by TMegaMotoDir states.
+ *        by TMegaMotoHBDir states.
  *
  * \param new_pwm_duty is the new PWM duty cycle or
  *        power output in the aforementioned
