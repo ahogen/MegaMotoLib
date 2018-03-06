@@ -1,5 +1,5 @@
 # MegaMoto Arduino Library
-[![Build Status](https://travis-ci.org/ahogen/MegaMoto.svg?branch=master)](https://travis-ci.org/ahogen/MegaMoto)
+[![Build Status](https://travis-ci.org/ahogen/MegaMoto.svg?branch=master)](https://travis-ci.org/ahogen/MegaMotoLib)
 
 An Arduino library for interfacing with the MegaMoto family of motor controllers by [Robot Power](http://www.robotpower.com/). The "MegaMogo" name is trademark of Robot Power. You can find and purchase their hardware by visiting their website: [www.robotpower.com](http://www.robotpower.com/). I have been granted written permission by Robot Power to use the "MegaMoto" name in the library and associated code as long as I point people to their company name and website. *I encourage you to go check out their stuff!*
 
